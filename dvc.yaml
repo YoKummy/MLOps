@@ -12,8 +12,8 @@ stages:
     cmd: python train.py
     deps:
     - catvdog.yaml
-    - catvdog/raw/train
-    - catvdog/raw/val
+    - catvdog/train
+    - catvdog/val
     - train.py
     outs:
     - runs/detect/train/weights/best.pt
