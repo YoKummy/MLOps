@@ -6,3 +6,6 @@ runs/
 
 !*.dvc
 !dvc.lock
+
+*.pt
+dvc_plots/
