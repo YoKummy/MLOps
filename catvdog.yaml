@@ -1,0 +1,7 @@
+path: C:/Users/1003380/Mine/MLOps/catvdog/raw  # The base path
+train: train/images
+val: val/images
+test: test/images
+
+nc: 2
+names: ['cat', 'dog']

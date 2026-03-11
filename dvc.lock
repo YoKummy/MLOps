@@ -1,0 +1,56 @@
+schema: '2.0'
+stages:
+  split_data:
+    cmd: python datasplit.py
+    deps:
+    - path: catvdog/raw/images
+      hash: md5
+      md5: e7bc04bac38a82ab19eada220b46199e.dir
+      size: 14061329
+      nfiles: 429
+    - path: datasplit.py
+      hash: md5
+      md5: b5ca16cf4868d42224f54df2051db290
+      size: 2281
+    outs:
+    - path: catvdog/raw/test
+      hash: md5
+      md5: a25fcb2beeaa5a8e16efa3c33f3e1375.dir
+      size: 17892
+      nfiles: 2
+    - path: catvdog/raw/train
+      hash: md5
+      md5: bc16dfca20f14af8c48472815ef53b4b.dir
+      size: 8020537
+      nfiles: 492
+    - path: catvdog/raw/val
+      hash: md5
+      md5: 4f54c21e149b32acaf632df9a25cd28c.dir
+      size: 5525746
+      nfiles: 330
+  train_yolo:
+    cmd: python train.py
+    deps:
+    - path: catvdog.yaml
+      hash: md5
+      md5: 4eb55a161dc7e5c024d757d56269dfde
+      size: 151
+    - path: catvdog/raw/train
+      hash: md5
+      md5: f0e6d622d1f098811b2b54f6c82b718f.dir
+      size: 8066097
+      nfiles: 493
+    - path: catvdog/raw/val
+      hash: md5
+      md5: 5bd009bd6a74eaf7fb5281aac6cd651a.dir
+      size: 5585271
+      nfiles: 331
+    - path: train.py
+      hash: md5
+      md5: 514a9f7cb379e1e0e7ada49dc08b6a4a
+      size: 1734
+    outs:
+    - path: runs/detect/train/weights/best.pt
+      hash: md5
+      md5: 96bfa1bbf08013b5e935e779441fc5b4
+      size: 51183826

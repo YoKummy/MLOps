@@ -1,2 +1,8 @@
-catvdog/
+catvdog/raw/
+catvdog/train/
+catvdog/val/
+catvdog/test/
+runs/
+
 !*.dvc
+!dvc.lock
