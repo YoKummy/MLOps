@@ -21,6 +21,12 @@ stages:
     - runs/detect/train/results.csv:
         cache: false
     plots:
+    - runs/detect/train/BoxF1_curve.png:
+        cache: false
+    - runs/detect/train/BoxP_curve.png:
+        cache: false
+    - runs/detect/train/BoxPR_curve.png:
+        cache: false
     - runs/detect/train/confusion_matrix.png:
         cache: false
     - runs/detect/train/results.png:

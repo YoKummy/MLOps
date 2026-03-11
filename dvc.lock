@@ -1,0 +1,68 @@
+schema: '2.0'
+stages:
+  split_data:
+    cmd: python datasplit.py
+    deps:
+    - path: catvdog/raw
+      hash: md5
+      md5: 0099ac4064f95fa0e0bd49f9bc4de48f.dir
+      size: 14077126
+      nfiles: 842
+    - path: datasplit.py
+      hash: md5
+      md5: bd272f52fce768d70d6751ba3a1016d4
+      size: 2360
+    outs:
+    - path: catvdog/test
+      hash: md5
+      md5: cf74e6af3cadfba52f31cc59944eef37.dir
+      size: 32803
+      nfiles: 2
+    - path: catvdog/train
+      hash: md5
+      md5: 8e3737a0d073ac3f52b5236e785371c8.dir
+      size: 8263894
+      nfiles: 494
+    - path: catvdog/val
+      hash: md5
+      md5: 08b3cdc9c4d56507b7f3b4f823c26ebc.dir
+      size: 5267478
+      nfiles: 328
+  train_yolo:
+    cmd: python train.py
+    deps:
+    - path: catvdog.yaml
+      hash: md5
+      md5: c17c981c2dc4e44d8a2b364e7b06403a
+      size: 147
+    - path: catvdog/train
+      hash: md5
+      md5: 98f4ee0864ab0ffe4fd10db884008d62.dir
+      size: 8308593
+      nfiles: 495
+    - path: catvdog/val
+      hash: md5
+      md5: 5598b855427f905d655e7e50f2f68b3a.dir
+      size: 5326239
+      nfiles: 329
+    - path: train.py
+      hash: md5
+      md5: 0394284bbbe397bb298497b8a4d118f5
+      size: 1748
+    outs:
+    - path: runs/detect/train/confusion_matrix.png
+      hash: md5
+      md5: f7a396be449c6e66168fd31d5c77ee04
+      size: 100314
+    - path: runs/detect/train/results.csv
+      hash: md5
+      md5: 3a23e5cdbb14abd730f136c7e7749058
+      size: 3885
+    - path: runs/detect/train/results.png
+      hash: md5
+      md5: 0778b333aac040ea4041746049601170
+      size: 293715
+    - path: runs/detect/train/weights/best.pt
+      hash: md5
+      md5: 582e707c35a1e773804c87e6fbe6f0dd
+      size: 51174866
