@@ -9,3 +9,4 @@ runs/
 
 *.pt
 dvc_plots/
+utils/__pycache__/
