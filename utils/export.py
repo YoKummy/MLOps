@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model = YOLO('kb_v11_l_0649.pt')
+model = YOLO('runs/detect/train/weights/best.pt')
 
 model.export(format='onnx')
 # import onnx
