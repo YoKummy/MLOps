@@ -24,9 +24,9 @@ for dir_path in output_dirs.values():
     os.makedirs(dir_path, exist_ok=True)
 
 # === Split ratios ===
-train_ratio = 0.6
-val_ratio = 0.4
-test_ratio = 0
+train_ratio = 0.7
+val_ratio = 0.15
+test_ratio = 0.15
 
 # Get image files
 image_files = [f for f in os.listdir(image_path) if f.endswith(('.jpg', '.png', '.jpeg'))]

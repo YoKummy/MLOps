@@ -1,12 +1,24 @@
-catvdog/raw/
-catvdog/train/
-catvdog/val/
-catvdog/test/
-runs/
+# --- Others ---
+__pycache__/
+*/__pycache__/
 
+# --- Machine Learning Artifacts ---
+runs/
+dvc_plots/
+*.pt
+
+# --- Data (Managed by DVC) ---
+# Instead of listing every subfolder, ignore the whole data directory
+catvdog/
+
+# --- DVC Internal ---
+# We keep the .dvc files so Git knows where the data lives 
+# But we ignore the heavy cache and temporary files
+.dvc/cache
+.dvc/tmp
+
+# --- EXCEPTIONS ---
+# We use '!' to tell Git: "Even though I ignored the folders above, 
+# DO NOT ignore these specific files." 
 !*.dvc
 !dvc.lock
-
-*.pt
-dvc_plots/
-utils/__pycache__/
