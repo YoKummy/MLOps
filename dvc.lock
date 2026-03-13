@@ -5,9 +5,9 @@ stages:
     deps:
     - path: catvdog/raw/images
       hash: md5
-      md5: e7bc04bac38a82ab19eada220b46199e.dir
-      size: 14061329
-      nfiles: 429
+      md5: 585e652c22f65c343f4b881e8096e0ad.dir
+      size: 13941081
+      nfiles: 423
     - path: catvdog/raw/labels
       hash: md5
       md5: 4a9c28df5ce9e32cb8620c2e5cd13cbd.dir
@@ -20,19 +20,19 @@ stages:
     outs:
     - path: catvdog/test
       hash: md5
-      md5: b36a0ef6ccf8931a8ee7acf951a0db68.dir
-      size: 1858170
-      nfiles: 126
+      md5: 49b1b89f857b0d543ab4179cac355326.dir
+      size: 2256878
+      nfiles: 124
     - path: catvdog/train
       hash: md5
-      md5: 3aed07e3d5377972d1d94be713cf0aa1.dir
-      size: 9417869
-      nfiles: 573
+      md5: 57d27325bcea13b7cd13fb779db511f1.dir
+      size: 9442589
+      nfiles: 567
     - path: catvdog/val
       hash: md5
-      md5: 5bec0b8be99d2e17be81180477369ba5.dir
-      size: 2351597
-      nfiles: 127
+      md5: b1569829160f78d8c3965a0c340bee8c.dir
+      size: 1835971
+      nfiles: 123
   train_yolo:
     cmd: python train.py
     deps:
@@ -42,14 +42,14 @@ stages:
       size: 147
     - path: catvdog/train
       hash: md5
-      md5: 3aed07e3d5377972d1d94be713cf0aa1.dir
-      size: 9417869
-      nfiles: 573
+      md5: 57d27325bcea13b7cd13fb779db511f1.dir
+      size: 9442589
+      nfiles: 567
     - path: catvdog/val
       hash: md5
-      md5: 5bec0b8be99d2e17be81180477369ba5.dir
-      size: 2351597
-      nfiles: 127
+      md5: b1569829160f78d8c3965a0c340bee8c.dir
+      size: 1835971
+      nfiles: 123
     - path: train.py
       hash: md5
       md5: 04778d267770453a3f44b4e0b8ed1453
@@ -57,25 +57,25 @@ stages:
     outs:
     - path: runs/detect/train/BoxF1_curve.png
       hash: md5
-      md5: bc5adb580ec96539e5d7e7b9e6075215
-      size: 149288
+      md5: a6b3046ee740269bd8dd372c57b4e032
+      size: 150686
     - path: runs/detect/train/BoxPR_curve.png
       hash: md5
-      md5: 8e0ca68685d1b71db6de11efe33d4221
-      size: 90352
+      md5: a864360083d0fad5b7cce4c5cd2f19a9
+      size: 89429
     - path: runs/detect/train/confusion_matrix.png
       hash: md5
-      md5: 37b1f5a03cb1f7b93e04809c0e654e7a
-      size: 91253
+      md5: 0a175f75b75e81db0042e64328161433
+      size: 89523
     - path: runs/detect/train/results.csv
       hash: md5
-      md5: c799d24e8c8bdeaee518d623a8ef5452
-      size: 1380
+      md5: 7b4ae966ed78329db6cabf4635d53dae
+      size: 1376
     - path: runs/detect/train/results.png
       hash: md5
-      md5: 1d0050b8e3cfcbbad89efe9a516b8bba
-      size: 257952
+      md5: 684c68313a04c149ca29a3d3f8503bf6
+      size: 261347
     - path: runs/detect/train/weights/best.pt
       hash: md5
-      md5: 162c42d744fed23d7b5f64783e691421
+      md5: 07ba72aad89abac6be8a62a67275b6e4
       size: 5466515
