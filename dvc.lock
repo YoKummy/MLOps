@@ -1,0 +1,81 @@
+schema: '2.0'
+stages:
+  split_data:
+    cmd: python utils/datasplit.py
+    deps:
+    - path: catvdog/raw/images
+      hash: md5
+      md5: e7bc04bac38a82ab19eada220b46199e.dir
+      size: 14061329
+      nfiles: 429
+    - path: catvdog/raw/labels
+      hash: md5
+      md5: 4a9c28df5ce9e32cb8620c2e5cd13cbd.dir
+      size: 15797
+      nfiles: 413
+    - path: utils/datasplit.py
+      hash: md5
+      md5: e633f909ddf0fcdc9e1936abb3d33fc6
+      size: 2364
+    outs:
+    - path: catvdog/test
+      hash: md5
+      md5: b36a0ef6ccf8931a8ee7acf951a0db68.dir
+      size: 1858170
+      nfiles: 126
+    - path: catvdog/train
+      hash: md5
+      md5: 3aed07e3d5377972d1d94be713cf0aa1.dir
+      size: 9417869
+      nfiles: 573
+    - path: catvdog/val
+      hash: md5
+      md5: 5bec0b8be99d2e17be81180477369ba5.dir
+      size: 2351597
+      nfiles: 127
+  train_yolo:
+    cmd: python train.py
+    deps:
+    - path: catvdog.yaml
+      hash: md5
+      md5: c17c981c2dc4e44d8a2b364e7b06403a
+      size: 147
+    - path: catvdog/train
+      hash: md5
+      md5: 3aed07e3d5377972d1d94be713cf0aa1.dir
+      size: 9417869
+      nfiles: 573
+    - path: catvdog/val
+      hash: md5
+      md5: 5bec0b8be99d2e17be81180477369ba5.dir
+      size: 2351597
+      nfiles: 127
+    - path: train.py
+      hash: md5
+      md5: 95eb0071449777448633de6588e34327
+      size: 1748
+    outs:
+    - path: runs/detect/train/BoxF1_curve.png
+      hash: md5
+      md5: 0c93036e5013af7c2974ecac2cd0dd8f
+      size: 144489
+    - path: runs/detect/train/BoxPR_curve.png
+      hash: md5
+      md5: 2c133ab288887d25e5d83df1fbf6e3da
+      size: 89535
+    - path: runs/detect/train/confusion_matrix.png
+      hash: md5
+      md5: 45ae5c148a83fc0b1ff696eeb4815fc9
+      size: 90837
+    - path: runs/detect/train/results.csv
+      hash: md5
+      md5: 6ac44ee46fbf7000eb9037fb617f6499
+      size: 3859
+    - path: runs/detect/train/results.png
+      hash: md5
+      md5: 7f17da993042f01b44e8eac9f4b7b383
+      size: 294604
+    - path: runs/detect/train/weights/best.pt
+      hash: md5
+      md5: 216b996fb51ee418de63fcf3f83b20f6
+      size: 5458515
