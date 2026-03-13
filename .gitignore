@@ -1,6 +1,7 @@
 # --- Others ---
 __pycache__/
 */__pycache__/
+.vscode/
 
 # --- Machine Learning Artifacts ---
 runs/

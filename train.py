@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import matplotlib
 matplotlib.use("Agg")
 
-model = YOLO("yolo11l.pt")
+model = YOLO("yolo11n.pt")
 # model.train(data="kb.yaml", epochs=250, imgsz=1600, cfg='evo.yaml',
 #             device=[0], project="KB_EVO", name="KB_evo", workers=39, batch=8,
 #             optimizer='SGD', save=True, auto_augment=None, erasing=0.0,
