@@ -10,7 +10,7 @@ dvc_plots/
 
 # --- Data (Managed by DVC) ---
 # Instead of listing every subfolder, ignore the whole data directory
-catvdog/
+catvdog/*
 
 # --- DVC Internal ---
 # We keep the .dvc files so Git knows where the data lives 
