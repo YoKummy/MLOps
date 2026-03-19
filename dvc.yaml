@@ -1,0 +1,29 @@
+stages:
+  split_data:
+    cmd: python utils/datasplit.py
+    deps:
+    - catvdog/raw/images
+    - catvdog/raw/labels
+    - utils/datasplit.py
+    outs:
+    - catvdog/test
+    - catvdog/train
+    - catvdog/val
+  train_yolo:
+    cmd: python train.py && python utils/extract_metrics.py
+    deps:
+    - catvdog.yaml
+    - catvdog/train
+    - catvdog/val
+    - train.py
+    - utils/extract_metrics.py
+    outs:
+    - runs/detect/train/weights/best.pt
+    - runs/detect/train/results.csv
+    metrics:
+     - metrics.json
+    plots:
+    - runs/detect/train/BoxF1_curve.png
+    - runs/detect/train/BoxPR_curve.png
+    - runs/detect/train/confusion_matrix.png
+    - runs/detect/train/results.png

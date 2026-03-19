@@ -1,0 +1,35 @@
+schema: '2.0'
+stages:
+  split_data:
+    cmd: python utils/datasplit.py
+    deps:
+    - path: catvdog/raw/images
+      hash: md5
+      md5: e7bc04bac38a82ab19eada220b46199e.dir
+      size: 14061329
+      nfiles: 429
+    - path: catvdog/raw/labels
+      hash: md5
+      md5: 4a9c28df5ce9e32cb8620c2e5cd13cbd.dir
+      size: 15797
+      nfiles: 413
+    - path: utils/datasplit.py
+      hash: md5
+      md5: e633f909ddf0fcdc9e1936abb3d33fc6
+      size: 2364
+    outs:
+    - path: catvdog/test
+      hash: md5
+      md5: 0c44e0ca14345739c51c52156e158a63.dir
+      size: 2056153
+      nfiles: 128
+    - path: catvdog/train
+      hash: md5
+      md5: 62442b221577747a9d896bafdc5f8356.dir
+      size: 9788005
+      nfiles: 574
+    - path: catvdog/val
+      hash: md5
+      md5: f3335e65544d84b63a4ab3268f66a30b.dir
+      size: 1720017
+      nfiles: 122
