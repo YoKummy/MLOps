@@ -23,3 +23,4 @@ catvdog/*
 # DO NOT ignore these specific files." 
 !*.dvc
 !dvc.lock
+/metrics.json
