@@ -4,7 +4,7 @@ on: [push] # This tells GitHub to run this every time you push code
 
 jobs:
   test-model-and-api:
-    runs-on: self-hosted # This matches the PC52525 runner you just set up!
+    runs-on: self-hosted # Use self-hosted runner to access your local environment and files
     
     steps:
       - name: 1. Checkout Repository
@@ -16,3 +16,7 @@ jobs:
       - name: 3. Test API Loading
         # A quick command to make sure your FastAPI code doesn't have syntax errors
         run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from utils.fastAPI import app; print('FastAPI App Loaded Successfully!')"
+
+      - name: 4. Model Check
+        # Verify the YOLO model actually loads and initializes without crashing
+        run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from ultralytics import YOLO; model = YOLO('runs/detect/train/weights/best.pt'); print('YOLO Model Initialized Successfully!')"
