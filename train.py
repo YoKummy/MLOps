@@ -14,7 +14,7 @@ model = YOLO("yolo11n.pt")
             # hsv_h=0.01, hsv_s=0.0, hsv_v=0.1, scale=0.5, erasing=0.0, degrees=10.0,)
 
 
-model.train(data="catvdog.yaml", epochs=5, imgsz=640, 
+model.train(data="catvdog.yaml", epochs=20, imgsz=640, 
             device=[0], workers=0, batch=32, optimizer='SGD', 
             save=True, cos_lr=True, plots=True, val=True, exist_ok=True)
 
