@@ -1,0 +1,18 @@
+name: MLOps CI Pipeline
+
+on: [push] # This tells GitHub to run this every time you push code
+
+jobs:
+  test-model-and-api:
+    runs-on: self-hosted # This matches the PC52525 runner you just set up!
+    
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 2. Check Python Version
+        run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe --version
+
+      - name: 3. Test API Loading
+        # A quick command to make sure your FastAPI code doesn't have syntax errors
+        run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from utils.fastAPI import app; print('FastAPI App Loaded Successfully!')"
