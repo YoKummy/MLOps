@@ -30,3 +30,19 @@ jobs:
       - name: 6. Gatekeeper check
         # This is a place to check if the current model scores higher than the previous one before deploying
         run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe utils/gatekeeper.py
+
+      - name: 7. Continuous Deployment (CD)
+        run: |
+          $status = Get-Content "deployment_status.txt"
+          New-Item -ItemType Directory -Force -Path "C:\Shadow_Pipeline_Production"
+          
+          if ($status -eq "DEPLOY_MODEL") {
+              Write-Host "Deploying new Model, API, and High Score to Production..."
+              Copy-Item -Path "runs\detect\train\weights\best.pt" -Destination "C:\Shadow_Pipeline_Production\best.pt" -Force
+              Copy-Item -Path "utils" -Destination "C:\Shadow_Pipeline_Production\utils" -Recurse -Force
+              Copy-Item -Path "new_high_score.txt" -Destination "C:\Shadow_Pipeline_Production\best_map.txt" -Force
+          }
+          elseif ($status -eq "DEPLOY_CODE") {
+              Write-Host "Deploying API Code updates only. Model remains untouched..."
+              Copy-Item -Path "utils" -Destination "C:\Shadow_Pipeline_Production\utils" -Recurse -Force
+          }
