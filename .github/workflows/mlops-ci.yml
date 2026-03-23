@@ -20,3 +20,7 @@ jobs:
       - name: 4. Model Check
         # Verify the YOLO model actually loads and initializes without crashing
         run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from ultralytics import YOLO; model = YOLO('runs/detect/train/weights/best.pt'); print('YOLO Model Initialized Successfully!')"
+
+      - name: 5. Gatekeeper check
+        # This is a place to check if the current model scores higher than the previous one before deploying
+        run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe utils/gatekeeper.py
