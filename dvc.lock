@@ -52,7 +52,7 @@ stages:
       nfiles: 123
     - path: train.py
       hash: md5
-      md5: 3ac74a509806e5f69f77c6d9f99fff59
+      md5: 0647ba46349673dd5032431767159b87
       size: 1749
     - path: utils/extract_metrics.py
       hash: md5
@@ -61,29 +61,29 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: 77feac752da9326893a34ac59302f07e
-      size: 50
+      md5: 23ca865f8b32f1e5871f157783fcbfd3
+      size: 49
     - path: runs/detect/train/BoxF1_curve.png
       hash: md5
-      md5: cb8077a8994784fc51a01db00b875330
-      size: 128836
+      md5: 7d65ac5ce99d5742452e9b9429654f50
+      size: 136993
     - path: runs/detect/train/BoxPR_curve.png
       hash: md5
-      md5: f0e037a4b0370274e8759c47bf6bc149
-      size: 92436
+      md5: 6c87b1fa88a2638dc68967ddac13475c
+      size: 88317
     - path: runs/detect/train/confusion_matrix.png
       hash: md5
-      md5: c83118d3659eb5475aaa441aa154ebdb
-      size: 92981
+      md5: fa06cfd0161751054927a08e68531946
+      size: 91949
     - path: runs/detect/train/results.csv
       hash: md5
-      md5: aa071a055daa080fa3c19022484d01df
-      size: 5090
+      md5: 3257089cbe8076c9f3f59c394ac108d6
+      size: 8823
     - path: runs/detect/train/results.png
       hash: md5
-      md5: 242d0e91a7e86f665e3fd10661246d9d
-      size: 307747
+      md5: 90ea0faf20dae09189ed3e83db67f315
+      size: 292944
     - path: runs/detect/train/weights/best.pt
       hash: md5
-      md5: 4ff67da7536b2c5db930ede6a54b4848
-      size: 5470355
+      md5: 1932b944ed6220114ee5ff100fcd088a
+      size: 5474195
