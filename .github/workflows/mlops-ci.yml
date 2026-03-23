@@ -13,16 +13,17 @@ jobs:
       - name: 2. Check Python Version
         run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe --version
 
-      - name: 3. Test API Loading
-        # A quick command to make sure your FastAPI code doesn't have syntax errors
-        run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from utils.fastAPI import app; print('FastAPI App Loaded Successfully!')"
-
-      - name: 4. Sync dvc
+      - name: 3. Sync dvc
         # Check if the data loading script runs without errors
         run: |
           C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\Scripts\dvc.exe cache dir C:\Users\1003380\Mine\MLOps\.dvc\cache
           C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\Scripts\dvc.exe config cache.type copy
           C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\Scripts\dvc.exe checkout
+
+      - name: 4. Test API Loading
+        # A quick command to make sure your FastAPI code doesn't have syntax errors
+        run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from utils.fastAPI import app; print('FastAPI App Loaded Successfully!')"
+      
       - name: 5. Model Check
         # Verify the YOLO model actually loads and initializes without crashing
         run: C:\Users\1003380\AppData\Local\anaconda3\envs\ultralytics\python.exe -c "from ultralytics import YOLO; model = YOLO('runs/detect/train/weights/best.pt'); print('YOLO Model Initialized Successfully!')"
