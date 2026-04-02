@@ -1,5 +1,15 @@
-This page is a simple demo for MLOps, where I will show the process of the whole pipeline from gathering data, processing the data, training the data, and eventually deploying the model. I want to include CI / CD in the future but that depends on my time.
-This is the notion page that you can use with this repo: https://www.notion.so/MLOps-3211d0582cb58047a740f70018b892da?source=copy_link
+Phase 5: CI/CD & Production Gating (main)
 
-# Phase 1
-This branch is phase one, which you can follow along in the notion page, this part mainly focus on dealing with a brand new setup with dvc and handle the different scenario you'll likely face in real world scenario
+Goal: The "Final Boss"—Automated testing and safety-gated deployment to the factory floor.
+
+    Key Files: .github/workflows/mlops-ci.yml, utils/gatekeeper.py.
+
+    What this branch does:
+
+        Runs a Self-Hosted Runner on local hardware (PC52525).
+
+        The Gatekeeper: A Python script that compares the new model's mAP against the production high score.
+
+        Continuous Deployment (CD): Automatically updates the C:\Shadow_Pipeline_Production folder only if the model passes the quality gate.
+
+    Core Command: git push (triggers the entire automated pipeline).
