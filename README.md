@@ -1,5 +1,15 @@
-This page is a simple demo for MLOps, where I will show the process of the whole pipeline from gathering data, processing the data, training the data, and eventually deploying the model. I want to include CI / CD in the future but that depends on my time.
-This is the notion page that you can use with this repo: https://www.notion.so/MLOps-3211d0582cb58047a740f70018b892da?source=copy_link
+Phase 4: Model Serving (Phase-4-Serving)
 
-# Phase 1
-This branch is phase one, which you can follow along in the notion page, this part mainly focus on dealing with a brand new setup with dvc and handle the different scenario you'll likely face in real world scenario
+Goal: Transform a static weight file into a live, interactive web service.
+
+    Key Files: utils/fastAPI.py.
+
+    What this branch does:
+
+        Implements a FastAPI server with a /predict endpoint.
+
+        Uses OpenCV to process incoming images and YOLOv8 to generate JSON detections.
+
+        Provides an interactive Swagger UI for testing model inference.
+
+    Core Command: uvicorn fastAPI:app --reload.
