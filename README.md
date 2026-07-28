@@ -1,12 +1,12 @@
 # Automated MLOps Pipeline: Computer Vision at the Edge
 
-## 🚀 Project Overview
+##  Project Overview
 
 This project demonstrates a complete **Machine Learning Operations (MLOps)** lifecycle, transitioning a raw image dataset into a production-ready API. The system features an automated **"Metric Gatekeeper"** that protects the production environment by only deploying models that statistically outperform the current live version.
 
 The architecture simulates an industrial "Edge" deployment, where models are trained locally and deployed to a specific factory-floor directory (`C:\Shadow_Pipeline_Production`) via a self-hosted CI/CD runner.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Model:** YOLOv8 (Ultralytics) for high-speed object detection.
 - **Data Versioning:** **DVC (Data Version Control)** to manage heavy datasets and model weights without bloating Git.
@@ -16,7 +16,7 @@ The architecture simulates an industrial "Edge" deployment, where models are tra
 
 ---
 
-## 🏗️ The 5-Phase Architecture
+##  The 5-Phase Architecture
 
 For a deep dive into the engineering decisions and technical hurdles of each phase, please refer to the [**Full Technical Documentation on Notion**](https://www.notion.so/MLOps-3211d0582cb58047a740f70018b892da?source=copy_link).
 
@@ -61,7 +61,7 @@ uvicorn fastAPI:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 📈 Metric Comparison Logic
+##  Metric Comparison Logic
 
 The **Gatekeeper** (located in `utils/gatekeeper.py`) follows strict logic to ensure stability:
 
